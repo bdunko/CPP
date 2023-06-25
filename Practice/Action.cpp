@@ -1,6 +1,14 @@
 #include "Action.h"
+#include <cassert>
 
-Action::Action(Action::Type type)
+Action::Verb Action::get_verb()
 {
-	m_type = type;
+	return m_verb;
+}
+
+std::string Action::get_arg(int i)
+{
+	if (m_args.size() <= i)
+		return "ERROR";
+	return m_args[i];
 }
